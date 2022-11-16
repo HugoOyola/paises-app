@@ -1,27 +1,29 @@
-<h3>
-  Buscar por región: <small>{{ regionActiva | titlecase }}</small>
-</h3>
-<hr />
+<div class="animate__animated animate__fadeIn anmate__faster">
+  <h3>
+    Buscar por región: <small>{{ regionActiva | titlecase }}</small>
+  </h3>
+  <hr />
 
-<h5>Seleccione la región</h5>
-<div class="row">
-  <div class="col">
-    <!-- PRIMERA FORMA -->
-    <!-- [class.btn-primary]="region === regionActiva" -->
-    <!-- ============================ -->
-    <!-- SEGUNDA FORMA -->
-    <!-- [ngClass]="{
-      'btn-primary': regionActiva === region,
-      'btn-outline-primary': regionActiva !== region
-    }" -->
-    <button
-      *ngFor="let region of regiones"
-      title="{{ region }}"
-      [class]="getClaseCSS(region)"
-      (click)="activarRegion(region)"
-    >
-      {{ region | titlecase }}
-    </button>
+  <h5>Seleccione la región</h5>
+  <div class="row">
+    <div class="col">
+      <!-- PRIMERA FORMA -->
+      <!-- [class.btn-primary]="region === regionActiva" -->
+      <!-- ============================ -->
+      <!-- SEGUNDA FORMA -->
+      <!-- [ngClass]="{
+        'btn-primary': regionActiva === region,
+        'btn-outline-primary': regionActiva !== region
+      }" -->
+      <button
+        *ngFor="let region of regiones"
+        title="{{ region }}"
+        [class]="getClaseCSS(region)"
+        (click)="activarRegion(region)"
+      >
+        {{ region | titlecase }}
+      </button>
+    </div>
   </div>
 </div>
 
